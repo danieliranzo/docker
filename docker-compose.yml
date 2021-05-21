@@ -1,0 +1,32 @@
+version: '3'
+
+ 
+
+services:
+
+  dns:
+    image: daniel111999/dns:v6
+    
+    restart: always
+
+    network_mode: host
+    
+    dns_search:
+            - daniel.es
+  
+  dhcp:
+
+    image: daniel111999/dhcp:v3
+    
+    restart: always
+
+    network_mode: host
+
+    
+  apache2:
+
+    image: daniel111999/apache2:v4
+
+    restart: always
+      
+    network_mode: host  
